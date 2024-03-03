@@ -6,11 +6,11 @@ print((99**3)*8)
 
 
 # Exercise 3 : What Is The Output ?
-print(5 < 3) # False
-print(3 == 3) #True
-print(3 == "3") # False
+#print(5 < 3) # False
+#print(3 == 3) #True
+#print(3 == "3") # False
 #print("3" > 3) # TypeError
-print("Hello" == "hello") # False
+#print("Hello" == "hello") # False
 
 #Exercise 4 : Your Computer Brand
 computer_brand = 'Redmi'
