@@ -39,3 +39,4 @@ while char == char:
     sp.append(len(user_input))
 
 
+
