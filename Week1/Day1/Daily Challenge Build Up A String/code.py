@@ -15,6 +15,13 @@ for i in range(len(user_string)):
     string_out += user_string[i]
     print(string_out)
 
+#or
+ind = 1
+for i in range(len(user_string)):
+    print(user_string[:ind])
+    ind += 1
+
+
 import random as rd
 
 chars = list(user_string)
