@@ -35,7 +35,7 @@ else:
     print('Odd number')
 #Exercise 8 : What’s Your Name ?
 user_name = input('What’s Your Name?: ').lower()
-if user_name == 'mikhail' or 'michael':
+if user_name == 'mikhail' or user_name == 'michael':
     print('You do not say! It is impossible!!!')
 #Exercise 9 : Tall Enough To Ride A Roller Coaster
 user_height = int(input('What is your height(in inches): '))
