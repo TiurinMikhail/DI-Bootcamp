@@ -98,7 +98,7 @@ text_unic_words = []
 for word in words_list:
     if word not in text_unic_words:
         text_unic_words.append(word)
-
+avg_amnt_words = int(words_cnt/setneces)
 print(f'This text contains {len(text)} characters,{setneces} sentences,{words_cnt} words and {len(text_unic_words)} unic words.')
 non_spaces = [char for char in text if char != ' ']
 print(len(non_spaces))
