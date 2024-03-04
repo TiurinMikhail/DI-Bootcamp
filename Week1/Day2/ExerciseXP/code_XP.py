@@ -91,10 +91,13 @@ print(total_coast)
 
 #teenager
 teenager_names = ['Andrew', 'Joseph', 'Daniel', 'Roni','Marcel','Moshe','Kanan','Mikhail']
+tenn_restr = []
 for item in teenager_names:
     age = int(input(f'Enter your age,{item}: '))
-    if 16 <= age <= 21:
-        teenager_names.pop(teenager_names.index(item))
+    if age <= 21:
+        tenn_restr.append(item)
+for item in tenn_restr:
+    teenager_names.remove(item)
 print(teenager_names)
 
 #Exercise 10 : Sandwich Orders
