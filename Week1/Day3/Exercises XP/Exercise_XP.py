@@ -46,6 +46,9 @@ print(brand['international_competitors'][-1])
 #9
 mj_clr_us = brand['major_color']['US']
 print(f'The major clothes colors in the US: {mj_clr_us}',sep='\n')
+#or
+for item in brand['major_color']['US']:
+    print(item)
 #10
 print(f'Length of the dictionary is: {len(brand)}')
 #11
