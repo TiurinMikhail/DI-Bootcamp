@@ -78,7 +78,12 @@ users_sorted = sorted(users)
 for i in range(len(users_sorted)):
     disney_users_C[users_sorted[i]] = i
 print(disney_users_C)
-
+#4
+disney_users_A_recreated = {}
+for key in disney_users_A.keys():
+    if (key.lower().startswith('m') or key.lower().startswith('p')) and 'i' in key:
+        disney_users_A_recreated.update({key: disney_users_A[key]})
+print(disney_users_A_recreated)
 
 
 
