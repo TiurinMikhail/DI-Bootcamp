@@ -157,8 +157,8 @@ def print_cor_incor(num1,num2):
     print(f'The nuber of correct answers is {num1} and the nuber of incorrect answers is {num2}')
 
 def get_question():
-    cnt_incorrect = 10
-    while cnt_incorrect > 3:
+    again = 'y'
+    while again == 'y':
         cnt_correct = 0
         cnt_incorrect = 0
         wrong_answers = []
@@ -177,8 +177,8 @@ def get_question():
                 answer_for_question.append(items['answer'])
                 print_cor_incor(cnt_correct, cnt_incorrect)
         for i in range(cnt_incorrect):
-            print(f'You answered wrong: {wrong_questions[i]}. Your incorrect answer was {wrong_answers[i]}. The right answer is: {answer_for_question[i]}')
-        print('Lets play again!')
+            print(f"You answered wrong: '{wrong_questions[i]}'. Your incorrect answer was '{wrong_answers[i]}'. The right answer is: '{answer_for_question[i]}'")
+        again = input('Do you want to play again? (y/n): ').lower()
     print('Thanks for playing!')
 get_question()
 
