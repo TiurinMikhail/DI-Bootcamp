@@ -90,13 +90,13 @@ def get_random_temp():
     user_month_num = int(input('Enter the number of months: '))
     season = determine_season(user_month_num)
     if season == 'winter':
-        return rand.uniform(-25, 5)
+        return round(rand.uniform(-25, 5),2)
     elif season == 'spring':
-        return rand.uniform(-5,16)
+        return round(rand.uniform(-5,16),2)
     elif season == 'summer':
-        return rand.uniform(16,40)
+        return round(rand.uniform(16,40),2)
     elif season == 'autumn':
-        return rand.uniform(0,22)
+        return round(rand.uniform(0,22),2)
 
 
 def main():
