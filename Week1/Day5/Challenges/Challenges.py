@@ -228,14 +228,18 @@ type_count(a=1,b='string',c=1.0,d=True,e=False)
 def mimic_split(string,separator):
     split_string = []
     cnt = 0
-    for i in range(len(string)):
-        if string[i] == separator:
-            split_string.append(string[cnt:i])
-            cnt = i
-    split_string.append(string[cnt+1:])
-    return split_string
+    if separator not in string:
+        split_string.append(string)
+        return split_string
+    else:
+        for i in range(len(string)):
+            if string[i] == separator:
+                split_string.append(string[cnt:i])
+                cnt = i
+        split_string.append(string[cnt + 1:])
+        return split_string
 
-split_string = mimic_split('To do or not to do',',')
+split_string = mimic_split('To do or not to do',' ')
 print(split_string)
 
 
