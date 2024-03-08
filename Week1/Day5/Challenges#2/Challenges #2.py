@@ -14,7 +14,7 @@ n = 5
 for i in range(n):
     spaces = n-i-1
     stars = i+1
-
+    print(spaces * ' ', stars * '*')
 
 print()
 for j in range(2):
