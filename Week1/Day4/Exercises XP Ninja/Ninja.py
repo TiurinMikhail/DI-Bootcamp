@@ -28,5 +28,30 @@ def convert_morse(word):
             print('/',end='')
 
 convert_morse(sentence)
-
+print()
 #Exercise 3 : Box Of Stars
+def longest_word(user_array):
+    longest_word = ''
+    for word in user_array:
+        if len(word) > len(longest_word):
+            longest_word = word
+    return longest_word
+
+def box_printer(*strings):
+    string_list = []
+    for el in strings:
+        string_list.append(el)
+    lngst_word = longest_word(string_list)
+    print('*'*(len(lngst_word)+4))
+    for el in string_list:
+        if el != lngst_word:
+            print('* '+el+' '*(len(lngst_word)-len(el)-2)+'   *')
+        else:
+            print('* ' + el + ' ' * (len(lngst_word) - len(el) - 2) + ' *')
+    print('*'*(len(lngst_word)+4))
+
+box_printer("Hello", "World", "in", "reallylongword", "a", "frame")
+
+#Exercise 4- Analyse this code before executing it. What is the purpose of this code?
+
+#The purpose of this code is to demonstrate the insertion sort algorithm by sorting a given list of numbers
