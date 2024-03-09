@@ -29,6 +29,55 @@ for j in range(2):
             stars -= 1
 
 
+#or
+
+picture = [[0,0,0,1,0,0,0],
+           [0,0,1,1,1,0,0],
+           [0,1,1,1,1,1,0],
+           [0,0,0,0,0,0,0],
+           [0,0,0,0,0,0,0]]
+
+for row in picture:
+    for pixel in row:
+        if pixel == 1:
+            print('*',end='')
+        else:
+            print(' ',end='')
+    print()
+
+picture = [[0,0,0,0,0,1,0],
+           [0,0,0,0,1,1,0],
+           [0,0,0,1,1,1,0],
+           [0,0,1,1,1,1,0],
+           [0,1,1,1,1,1,0]]
+
+for row in picture:
+    for pixel in row:
+        if pixel == 1:
+            print('*',end='')
+        else:
+            print(' ',end='')
+    print()
+
+picture = [[1,0,0,0,0,0,0],
+           [1,1,0,0,0,0,0],
+           [1,1,1,0,0,0,0],
+           [1,1,1,1,0,0,0],
+           [1,1,1,1,1,0,0],
+           [1,1,1,1,1,0,0],
+           [0,1,1,1,1,0,0],
+           [0,0,1,1,1,0,0],
+           [0,0,0,1,1,0,0],
+           [0,0,0,0,1,0,0]]
+
+for row in picture:
+    for pixel in row:
+        if pixel == 1:
+            print('*',end='')
+        else:
+            print(' ',end='')
+    print()
+
 #Exercise 2
 #Instructions
 #Analyse this code before executing it. Write some commnts next to each line.
