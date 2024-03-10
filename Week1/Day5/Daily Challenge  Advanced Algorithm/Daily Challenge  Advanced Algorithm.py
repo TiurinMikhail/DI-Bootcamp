@@ -22,9 +22,11 @@ def sum_couples(list_of_numbers, target_number):
         # do not count the same pair twice
         if complement == number:
             pairs_counter -= 1
-    print(pairs_counter//2)
+    return pairs_counter//2
 
-sum_couples(list_of_numbers,target_number)
+n = sum_couples(list_of_numbers,target_number)
+
+print(f'The number of pairs is {n}')
 
 
 
