@@ -22,7 +22,17 @@ class Farm:
 
     def get_short_info(self):
         sorted_animals = self.get_animal_types()
-        print(f"{self.farm_name}'s farm has",'s, '.join(sorted_animals))
+        final_print = f"{self.farm_name}'s farm has "
+        for index,animal in enumerate(sorted_animals):
+            if self.animals[animal] > 1 and index != len(sorted_animals) - 1:
+                final_print += f'{animal}s,'
+            elif self.animals[animal] > 1 and index == len(sorted_animals) - 1:
+                final_print += f'{animal}s'
+            elif self.animals[animal] <= 1 and index == len(sorted_animals) - 1:
+                final_print += f'{animal}.'
+            elif self.animals[animal] <= 1 and index != len(sorted_animals) - 1:
+                final_print += f'{animal}'
+        return final_print
 
 
 macdonald = Farm("McDonald")
@@ -37,4 +47,4 @@ macdonald.get_info()
 
 print(macdonald.get_animal_types())
 
-macdonald.get_short_info()
+print(macdonald.get_short_info())
