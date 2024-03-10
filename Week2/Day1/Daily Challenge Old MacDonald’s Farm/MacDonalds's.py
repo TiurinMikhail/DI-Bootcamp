@@ -16,11 +16,25 @@ class Farm:
         print()
         print('    E - I - E - I - O!')
 
+    def get_animal_types(self):
+        sorted_animals = sorted([key for key in self.animals.keys()])
+        return sorted_animals
+
+    def get_short_info(self):
+        sorted_animals = self.get_animal_types()
+        print(f"{self.farm_name}'s farm has",'s, '.join(sorted_animals))
+
 
 macdonald = Farm("McDonald")
+
 macdonald.add_animal('cow',5)
 macdonald.add_animal('sheep')
 macdonald.add_animal('sheep')
 macdonald.add_animal('goat', 12)
 macdonald.add_animal('goat', 2)
+
 macdonald.get_info()
+
+print(macdonald.get_animal_types())
+
+macdonald.get_short_info()
