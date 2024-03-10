@@ -81,9 +81,9 @@ class Zoo:
         self.zoo_name = zoo_name
         self.animals = []
 
-    def add_animal(self,new_animal):
+    def add_animal(self,*new_animal):
         if new_animal not in self.animals:
-            self.animals.append(new_animal)
+            self.animals.extend(new_animal)
 
     def get_animals(self):
         for animal in self.animals:
@@ -118,6 +118,7 @@ tel_aviv_zoo = Zoo("tel_aviv_zoo")
 tel_aviv_zoo.add_animal("Ape")
 tel_aviv_zoo.add_animal("Baboon")
 tel_aviv_zoo.add_animal("Bear")
+print(tel_aviv_zoo.sort_animals())
 print(tel_aviv_zoo.animals)
 print()
 tel_aviv_zoo.sort_animals()
