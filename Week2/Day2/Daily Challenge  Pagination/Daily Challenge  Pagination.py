@@ -34,6 +34,7 @@ class Pagination():
         return self
 
     def goToPage(self,pageNum):
+        pageNum = int(pageNum)
         if pageNum > self.total_pages:
             self.currentPage = self.total_pages
         elif pageNum <= 0:
