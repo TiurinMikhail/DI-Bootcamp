@@ -1,9 +1,9 @@
 import os
 import string
-dir_path = os.path.dirname(os.path.realpath(__file__))
-
 import nltk
 from nltk.corpus import stopwords
+dir_path = os.path.dirname(os.path.realpath(__file__))
+
 
 nltk.download('stopwords')
 nltk.download()
@@ -45,16 +45,16 @@ class Text:
             else:
                 return 'All of the words in the text appears only once!'
 
-    def unic_words(self):
+    def unique_words(self):
         frequencies = {}
-        list_of_words = self.string.replace('.', '').replace('\n',' ').lower().split()
+        list_of_words = self.string.replace('.', '').replace('\n', ' ').lower().split()
         for word in list_of_words:
             frequencies[word] = list_of_words.count(word)
-        unic_words = []
+        unique_words = []
         for key, value in frequencies.items():
             if value == 1:
-                unic_words.append(key)
-        return unic_words
+                unique_words.append(key)
+        return unique_words
 
     @classmethod
     def from_file(cls,file_name):
@@ -68,21 +68,19 @@ class Text:
         text = ''.join(char for char in self.string if char not in punctuation)
         return text
 
-
     def remove_stopwords(self,stop_words):
         text = self.remove_punctuation().lower().split()
         text_final = ' '.join(word for word in text if word not in stop_words)
         return text_final
 
 
-
 text1 = Text('A good book would sometimes cost as much as a good house.')
 
 text1.word_frequency('fox')
 most_common_word = text1.most_common_words()
-unic_words = text1.unic_words()
+unique_words = text1.unique_words()
 print(most_common_word)
-print(unic_words)
+print(unique_words)
 print(text1)
 
 file_text = Text.from_file('/the_stranger.txt')
@@ -90,11 +88,11 @@ file_text = Text.from_file('/the_stranger.txt')
 file_text.word_frequency('good')
 most_common_file_word = file_text.most_common_words()
 print(most_common_file_word)
-unic_file_words = file_text.unic_words()
+unic_file_words = file_text.unique_words()
 print(unic_file_words)
 
+# print(file_text.remove_punctuation())
 
-#print(file_text.remove_punctuation())
 print(file_text.remove_stopwords(stop_words))
 
 
