@@ -8,7 +8,7 @@ class Currency:
         return f'{self.amount} {self.currency}s'
 
     def __int__(self):
-        return int(self.amount)
+        return int(round(self.amount, 0))
 
     def __repr__(self):
         return f'{self.amount} {self.currency}s'
@@ -38,7 +38,12 @@ c1 = Currency('dollar', 5)
 c2 = Currency('dollar', 10)
 c3 = Currency('shekel', 1)
 c4 = Currency('shekel', 10)
+c5 = Currency('dollar', 5.6)
 
+
+print(c5)
+print(int(c5))
+print(c5+0.5)
 
 print(str(c1))
 print(int(c1))
@@ -85,7 +90,7 @@ def current_date():
     formatted_date = current_date.strftime("%Y-%m-%d")
     return formatted_date
 
-print(current_date())
+print(f'Today: {current_date()}')
 
 #Exercise 5 : Amount Of Time Left Until January 1st
 
