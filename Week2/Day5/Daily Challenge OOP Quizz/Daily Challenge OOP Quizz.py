@@ -63,17 +63,21 @@ class Deck:
             rd.shuffle(self.cards)
 
     def deal(self):
-        random_card = rd.choice(self.cards)
-        print(str(random_card))
-        self.cards.remove(random_card)
+        # random_card = rd.choice(self.cards)
+        # print(str(random_card))
+        if len(self.cards) == 0:
+            print('The deck is over!')
+        else:
+            print(self.cards[0])
+            self.cards.remove(self.cards[0])
 
 deck1 = Deck()
-print(deck1)
 print('--------------------')
 deck1.shuffle()
 print(deck1)
 
 print('---------------------')
-deck1.deal()
-deck1.deal()
-print(len(deck1.cards))
+
+for _ in range(52):
+    deck1.deal()
+    print(len(deck1.cards))
