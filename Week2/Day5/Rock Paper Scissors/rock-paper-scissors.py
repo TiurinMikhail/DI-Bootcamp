@@ -1,6 +1,5 @@
 from game import Game
 
-
 def get_user_menu_choice():
     print('     MENU\n', '(g) Play a new game\n', '(x) Show scores\n', '(q) Quit\n')
     valid_input = ['g', 'x', 'q']
@@ -36,4 +35,5 @@ def main():
             print(f'You drew {results["draw"]} times')
             break
 
+# Try
 main()

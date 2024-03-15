@@ -46,7 +46,6 @@ class Game:
             print(f"You selected {user_item}. The computer selected {computer_item}. You won!")
             return game_result
 
-#
+
 # game1 = Game()
-#
 # game1.play()
