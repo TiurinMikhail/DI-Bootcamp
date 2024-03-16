@@ -68,15 +68,20 @@ class Queue:
 
     def rearrange_queue(self):
         new_queue = []
-        i = 0
-        while i < len(self.humans):
-            new_queue.append(self.humans[i])
-            if i < len(self.humans) - 1 and any(member in self.humans[i].family for member in self.humans[i + 1].family):
-                new_queue.append(self.humans.pop(i + 1))
-            else:
-                i += 1
-        self.humans = new_queue
+        for i, human in enumerate(self.humans):
+            if i != len(self.humans) -1 and self.humans[i] in self.humans[i+1].family:
+                self.humans.append(self.humans.pop(i))
 
+        # new_queue = []
+        # i = 0
+        # while i < len(self.humans):
+        #     new_queue.append(self.humans[i])
+        #     if i < len(self.humans) - 1 and any(
+        #             member in self.humans[i].family for member in self.humans[i + 1].family):
+        #         new_queue.append(self.humans.pop(i + 1))
+        #     else:
+        #         i += 1
+        # self.humans = new_queue
 
 human1 = Human(1, 'Antonio', 20, False, 'A')
 human2 = Human(12, 'Marco', 24, False, 'B')
