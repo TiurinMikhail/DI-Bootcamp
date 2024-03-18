@@ -1,0 +1,65 @@
+Table1 – FirstTab
+ID  Name
+5   Pawan
+6   Sharlee
+7   Krish
+NULL    Avtaar
+
+Table2 – SecondTab
+ID
+5
+NULL
+
+Q1. What will be the OUTPUT of the following statement?:
+ SELECT COUNT(*) 
+    FROM FirstTab AS ft 
+    WHERE ft.id NOT IN ( SELECT id FROM SecondTab WHERE id IS NULL )
+
+A1: This statement will count a number of rows in FirstTab, but only rows which has not id = NULL. So:
+Output:
+ID  Name
+5   Pawan
+6   Sharlee
+7   Krish
+
+Q2. What will be the OUTPUT of the following statement?
+
+    SELECT COUNT(*) 
+    FROM FirstTab AS ft 
+    WHERE ft.id NOT IN ( SELECT id FROM SecondTab WHERE id = 5 )
+
+A2. The same poin as in Q1 but here we will get a row without id == 5
+Output: 2 :
+ID  Name
+6   Sharlee
+7   Krish
+
+
+
+Q3. What will be the OUTPUT of the following statement?
+
+SELECT COUNT(*)
+FROM FirstTab AS ft
+WHERE ft.id NOT IN ( SELECT id FROM SecondTab )
+
+A3. Output:0 - because you can not compare NUll and smth
+
+
+
+
+Q4. What will be the OUTPUT of the following statement?
+
+    SELECT COUNT(*) 
+    FROM FirstTab AS ft 
+    WHERE ft.id NOT IN ( SELECT id FROM SecondTab WHERE id IS NOT NULL )
+
+A4. Output:2 the same as in Q2
+ID  Name
+6   Sharlee
+7   Krish
+
+
+
+
+
+
