@@ -38,7 +38,7 @@ from customer as t1 left join customer_profile as t2 on t1.customer_id = t2.cust
 --The number of customers that are not LoggedIn
 select count(*)
 from customer as t1 left join customer_profile as t2 on t1.customer_id = t2.customer_id
-where  t2.isLoggedIn is FALSE or t2.isLoggedIn is Null;
+where  t2.isLoggedIn is FALSE; --or t2.isLoggedIn is Null
 
 --Part II:
 --Create a table named Book, with the columns : book_id SERIAL PRIMARY KEY, title NOT NULL, author NOT NULL
