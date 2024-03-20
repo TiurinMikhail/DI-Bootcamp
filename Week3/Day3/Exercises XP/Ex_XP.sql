@@ -100,16 +100,15 @@ drop table customer_review;
 -- there is no need to extra check, because it is a child table
 
 --Find out how many rentals are still outstanding (ie. have not been returned to the store yet).
-select count(t1.film_id) as outstanding
-from film as t1 left join inventory as t2 on t1.film_id = t2.film_id
-where t2.inventory_id is NULL;
+select count(*) as number_outstanding
+from rental
+where return_date is null;
 
 -- Find the 30 most expensive movies which are outstanding (ie. have not been returned to the store yet)
-select *
-from film
-where film_id in (select t1.film_id
-from film as t1 left join inventory as t2 on t1.film_id = t2.film_id
-where t2.inventory_id is NULL)
+select film.title, film.rental_rate
+from film  join inventory on  film.film_id = inventory.film_id
+           join rental on inventory.inventory_id = rental.inventory_id
+where rental.return_date is null
 order by rental_rate desc, title
 fetch first 30 rows  only;
 
