@@ -9,7 +9,7 @@ create table customer_profile(
 profile_id serial primary key,
 isLoggedIn boolean default False,
 customer_id integer not null,
-CONSTRAINT fk_profile_id FOREIGN KEY (profile_id) REFERENCES customer (customer_id)
+CONSTRAINT fk_customer_id FOREIGN KEY (customer_id) REFERENCES customer (customer_id)
 );
 
 
@@ -38,7 +38,7 @@ from customer as t1 left join customer_profile as t2 on t1.customer_id = t2.cust
 --The number of customers that are not LoggedIn
 select count(*)
 from customer as t1 left join customer_profile as t2 on t1.customer_id = t2.customer_id
-where  t2.isLoggedIn is FALSE; -- or t2.isLoggedIn is Null
+where  t2.isLoggedIn is FALSE or t2.isLoggedIn is Null;
 
 --Part II:
 --Create a table named Book, with the columns : book_id SERIAL PRIMARY KEY, title NOT NULL, author NOT NULL
@@ -109,4 +109,5 @@ from library as t1  join book as t2 on t1.book_fk_id = t2.book_id
 where t2.title = 'Alice In Wonderland';
 
 --Delete a student from the Student table, what happened in the junction table ?
+
 --It will cause deleting the student from library with the same id as in students table.
