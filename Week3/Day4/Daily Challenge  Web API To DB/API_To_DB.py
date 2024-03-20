@@ -13,7 +13,6 @@ DATABASE = 'countries'
 response = requests.get(API_URL)
 
 response_json = response.json()
-print(response_json)
 
 def get_random_country_to_db():
     random_country = random.sample(response_json,10)
@@ -31,5 +30,5 @@ def get_random_country_to_db():
         connection.commit()
         connection.close()
 
-
-get_random_country_to_db()
+if __name__ == '__main__':
+    get_random_country_to_db()
