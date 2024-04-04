@@ -43,17 +43,20 @@ def decode_matrix(matrix,rows,cols,width=1):
     return print(final_message)
 
 stroke = """7ii
-            Tsx
-            h%?
-            i #
-            sM 
-            $a 
-            #t%
-            ^r!""".split('      ')
-print(stroke)
+Tsx
+h%?
+i #
+sM 
+$a 
+#t%
+^r!""".split('\n')
+
+rows = int(input())
+columns = int(input())
+
 matrix = [list(i) for i in stroke]
 del_spaces(matrix)
-print_matrix(matrix,len(matrix),3)
+print_matrix(matrix,rows,columns)
 print()
 transp(matrix,len(matrix),3)
 

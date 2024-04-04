@@ -11,9 +11,6 @@ user_string = input("Enter your word: ")
 final_string = ''
 for i in range(len(user_string)):
     if user_string[i] != user_string[i-1] or i ==0:
-        final_string+= user_string[i]
+        final_string += user_string[i]
 print(final_string)
 #or!!
-
-
-

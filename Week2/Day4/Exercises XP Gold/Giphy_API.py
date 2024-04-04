@@ -8,6 +8,8 @@ response = requests.get(url)
 
 if response.status_code == 200:
     data = response.json()
+    print(len(data['data']))
+    print(data)
     # Use f-strings and variables to build the URL string we’re using for the fetch.
     url_first_part = 'https://api.giphy.com/v1/gifs/search?'
     q = 'q=hilarious&'
@@ -38,12 +40,12 @@ if response2.status_code == 200:
     for dict in height_over_hundred:
         print(f'url: {dict["url"]}\n')
 
-#Exercise 3 : Giphy API #2
-term = input('Enter the term: ')
-url = f'https://api.giphy.com/v1/gifs/search?q=bulldog&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My'
-response3 = requests.get(url)
-if response3.status_code == 200:
-    data = response3.json()
-    print(len(data['data']))
-
+# #Exercise 3 : Giphy API #2
+# term = input('Enter the term: ')
+# url = f'https://api.giphy.com/v1/gifs/search?q=bulldog&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My'
+# response3 = requests.get(url)
+# if response3.status_code == 200:
+#     data = response3.json()
+#     print(len(data['data']))
+#
 

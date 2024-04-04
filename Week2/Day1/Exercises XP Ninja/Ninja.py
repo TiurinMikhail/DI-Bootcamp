@@ -40,6 +40,7 @@ class Phone:
     def show_messages_from(self,phone):
         for message in self.messages:
             if message['from'] == phone.phone_number:
+                print(f'Message from: {message["from"]}')
                 for key, value in message.items():
                     print(f'{key}: {value}')
 
@@ -64,5 +65,5 @@ avner_phone.send_message(megan_phone,'Hello there!')
 megan_phone.show_incoming_messages()
 megan_phone.show_outgoing_messages()
 
-print('---------------')
+print()
 megan_phone.show_messages_from(avner_phone)

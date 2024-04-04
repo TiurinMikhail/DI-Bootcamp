@@ -21,7 +21,6 @@ class MenuManager:
             string += '------------\n'
         return string
 
-
     def add_item(self, name, price):
         self.menu['items'].append({'name': name, 'price': price})
 

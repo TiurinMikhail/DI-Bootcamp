@@ -17,11 +17,11 @@ response_json = response.json()
 def get_random_country_to_db():
     random_country = random.sample(response_json,10)
     for country in random_country:
-        country_name = country['name']['official'].replace("'", '')
-        subregion = country['subregion'].replace("'", '')
+        country_name = country['name']['official'].replace("'", '`')
+        subregion = country['subregion'].replace("'", '`')
         # language = country['languages']['ell']
         flag = country['flags']['png']
-        capital = country['capital'][0].replace("'", '')
+        capital = country['capital'][0].replace("'", '`')
         population_cntry = country['population']
         connection = psycopg2.connect(host=HOSTNAME, user=USERNAME, password=PASSWORD, dbname=DATABASE)
         cursor = connection.cursor()

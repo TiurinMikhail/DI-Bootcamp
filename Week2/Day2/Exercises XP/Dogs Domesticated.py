@@ -51,11 +51,13 @@ class Family:
                     return True
                 else:
                     return False
+            else:
+                print('There is no such member in family!')
 
     def family_presentation(self):
         print(f'The family {self.last_name}')
         for member in self.members:
-            for key, value in member.items():
+            for key, value in sorted(member.items()):
                 print(f'{key}:{value}')
             print('-------------------')
             #print(f'Name: {member["name"]}, age: {member["age"]}, gender: {member["gender"]}, is_child: {member["is_child"]}')
@@ -90,7 +92,7 @@ class TheIncredibles(Family):
 
     def incredible_presentation(self):
         print('*Here is our powerful family **\n',self.last_name)
-        self.family_presentation()
+        super().family_presentation()
 
 
 

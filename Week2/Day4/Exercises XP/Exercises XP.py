@@ -57,6 +57,7 @@ sampleJson = """{
 }"""
 
 json_object = json.loads(sampleJson)
+print(type(json_object))
 
 #Add a key called “birth_date” to the JSON-string at the same level as the “name” key.
 print(json_object['company']['employee']['payable']['salary'])

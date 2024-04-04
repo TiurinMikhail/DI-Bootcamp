@@ -51,7 +51,7 @@ for i in range(1,21):
 my_name = 'mikhail'
 while True:
     user_name = input('Enter your name: ').lower()
-    if my_name==user_name:
+    if my_name == user_name:
         break
 
 #Exercise 7: Favorite Fruits
@@ -63,7 +63,7 @@ else:
     print('You chose a new fruit. I hope you enjoy')
 
 #Exercise 8: Who Ordered A Pizza ?
-pizza_toppings=[]
+pizza_toppings = []
 while True:
     user_input = input('Please enter pizza topping here (enter "quit" when you finish): ').lower()
     if user_input != 'quit':
@@ -72,7 +72,7 @@ while True:
     else:
         break
 total_price = 10+len(pizza_toppings)*2.5
-print(f'Your toppings: ',*pizza_toppings,f'Total price is {total_price}',sep='\n')
+print(f'Your toppings: ', *pizza_toppings, f'Total price is {total_price}', sep='\n')
 
 #Exercise 9: Cinemax
 family_size = input('Please enter how many people in your family? ')

@@ -17,6 +17,7 @@ items_purchase = {
 }
 
 wallet = "$300"
+
 wallet = int(wallet[1:])
 for key,value in items_purchase.items():
     if '$' in value or ',' in value:
@@ -28,6 +29,7 @@ for key,value in items_purchase.items():
         summ += int(value)
         if summ < wallet:
             list_of_store.append(key)
+list_of_store = sorted(list_of_store)
 if list_of_store == []:
     print('Nothing')
 else:
@@ -46,6 +48,7 @@ items_purchase = {
 wallet = "$100"
 
 wallet = int(wallet[1:])
+
 for key,value in items_purchase.items():
     if '$' in value or ',' in value:
         items_purchase[key] = value.replace('$','').replace(',','')
@@ -56,6 +59,7 @@ for key,value in items_purchase.items():
         summ += int(value)
         if summ < wallet:
             list_of_store.append(key)
+list_of_store = sorted(list_of_store)
 if list_of_store == []:
     print('Nothing')
 else:
@@ -81,7 +85,8 @@ for key,value in items_purchase.items():
         summ += int(value)
         if summ < wallet:
             list_of_store.append(key)
+list_of_store = sorted(list_of_store)
 if list_of_store == []:
     print('Nothing')
 else:
-    print(list_of_store)
+    print(list_of_store.sort())

@@ -5,9 +5,6 @@ from nltk.corpus import stopwords
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
 
-nltk.download('stopwords')
-nltk.download()
-
 stop_words = set(stopwords.words('english'))
 
 ############################################################
@@ -84,7 +81,8 @@ print(unique_words)
 print(text1)
 
 file_text = Text.from_file('/the_stranger.txt')
-
+print(len(file_text.string.split()))
+print(file_text.word_frequency('said'))
 file_text.word_frequency('good')
 most_common_file_word = file_text.most_common_words()
 print(most_common_file_word)
@@ -92,8 +90,11 @@ unic_file_words = file_text.unique_words()
 print(unic_file_words)
 
 # print(file_text.remove_punctuation())
+#
+# text2 = Text(file_text.remove_stopwords(stop_words))
+#
+# print(text2.most_common_words())
 
-print(file_text.remove_stopwords(stop_words))
 
 
 
