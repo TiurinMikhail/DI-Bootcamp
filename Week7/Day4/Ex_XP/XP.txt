@@ -1,0 +1,188 @@
+#%% md
+Exercise 1 : Defining The Problem And Data Collection For Loan Default Prediction
+--
+#%% md
+Problem Statement:
+
+The aim of this project is to develop a predictive model for loan defaults, enabling financial institutions to assess the risk associated with lending to applicants. By analyzing historical data and relevant features, the model will provide insights into the likelihood of a borrower defaulting on a loan, thereby assisting in informed decision-making and risk management.
+#%% md
+Data Types Required:
+
+Personal Details of Applicants:
+--
+- Full Name
+- Age
+- Gender
+- Contact Information
+- Employment Details
+- Income
+- Family status
+
+Financial Information:
+--
+- Credit Scores
+- Credit History
+- Debt-to-Income Ratio
+- Assets (property, vehicles etc.)
+- Liabilities (existing loans, mortgages)
+
+Loan Details:
+--
+- Loan Amount
+- Loan Term
+- Interest Rate
+- Type of Loan (e.g., mortgage, personal loan)
+- Does a person has a guarantor
+
+Repayment History:
+--
+- Payment Frequency
+- Timeliness of Payments
+- Number of Missed Payments
+- Loan Status (e.g., active, closed, defaulted)
+
+External Factors:
+--
+- Economic Indicators (e.g., unemployment rate, GDP growth)
+- Regulatory Changes
+- Market Trends (stagflation etc.)
+
+Data Sources:
+--
+- Financial Institution's Internal Records:
+- Application Forms
+- Loan Agreements
+- Payment Histories
+- Credit Bureaus:
+- Credit Reports
+- Credit Scores
+- Public Records (e.g., bankruptcies, liens)
+- Employment Verification Agencies:
+- Employment History
+- Income Verification
+- Government Agencies:
+- Tax Returns
+- Property Records
+- Regulatory Filings
+- Online Platforms:
+- Social Media Profiles (for additional insights into behavior and lifestyle)
+- Online Financial Management Tools
+- Surveys and Interviews:
+- Customer Feedback
+- Focus Groups
+#%% md
+Data Collection Plan:
+--
+
+Data Gathering: Collaborate with relevant departments within financial institutions to access internal records. Establish partnerships with credit bureaus and other data providers to obtain comprehensive financial data.
+
+Data Cleaning: Preprocess collected data to handle missing values, outliers, and inconsistencies. Standardize formats and resolve any discrepancies.
+
+Feature Engineering: Extract relevant features from the collected data to enhance predictive power. Create new features if necessary, such as debt-to-income ratios or payment history metrics.
+
+Data Integration: Integrate data from various sources into a unified dataset for analysis. Ensure compatibility and consistency across different data sets.
+
+Model Development: Utilize machine learning algorithms to develop a predictive model for loan defaults. Train the model using historical data, validate its performance, and fine-tune parameters for optimal results.
+
+Model Evaluation: Assess the model's performance using metrics such as accuracy, precision, recall, and F1-score. Conduct thorough validation and testing to ensure robustness and generalizability.
+
+Deployment: Deploy the trained model into the existing loan approval process of financial institutions. Develop user-friendly interfaces for stakeholders to access model predictions and insights.
+
+Monitoring and Maintenance: Continuously monitor the model's performance in real-world applications. Regularly update the model with new data and retrain as necessary to adapt to changing patterns and trends.
+#%% md
+Exercise 2 : Feature Selection And Model Choice For Loan Default Prediction
+--
+#%% md
+Repayment History, Credit Score, Debt-to-Income Ratio, Loan Amount, Income, and Employment Status are the most relevant features for predicting loan defaults. They reflect the borrower's financial behavior, creditworthiness, and ability to repay the loan, making them crucial indicators of default risk.
+
+
+
+
+
+
+#%% md
+Exercise 3 : Training, Evaluating, And Optimizing The Model
+--
+#%% md
+1. Split the Data: Divide the dataset into training and testing sets to train the model on one portion and evaluate its performance on unseen data.
+2. Train the Model: Utilize machine learning algorithms to train the model on the training data, using features such as repayment history, credit score, debt-to-income ratio, etc., to predict loan defaults.
+3. Predictions: Generate predictions for loan defaults using the trained model on the testing dataset.
+4. Evaluate Performance: Accuracy: Measure the overall correctness of the model's predictions by calculating the proportion of correctly classified instances (both defaulted and non-defaulted loans)
+5. Precision: Assess the model's ability to correctly identify defaulted loans out of all instances predicted as defaults. Precision is calculated as the ratio of true positives (correctly predicted defaults) to the sum of true positives and false positives (instances incorrectly predicted as defaults). 
+6. Recall (Sensitivity): Evaluate the model's ability to correctly identify defaulted loans out of all actual defaulted instances. Recall is calculated as the ratio of true positives to the sum of true positives and false negatives (instances incorrectly predicted as non-defaults).d. F1-Score: Harmonic mean of precision and recall, providing a balance between the two metrics. It considers both false positives and false negatives and is particularly useful when there is an imbalance between defaulted and non-defaulted instances.
+7. ROC Curve and AUC: Plot the Receiver Operating Characteristic (ROC) curve, which illustrates the trade-off between true positive rate (sensitivity) and false positive rate. Calculate the Area Under the Curve (AUC) to quantify the model's ability to distinguish between defaulted and non-defaulted loans across various thresholds.
+8. Confusion Matrix: Visualize the model's performance by creating a confusion matrix that displays the counts of true positives, true negatives, false positives, and false negatives.
+7. Iterate and Fine-Tune: Analyze the model's performance metrics and iterate on the model by fine-tuning hyperparameters, feature selection, or trying different algorithms to improve performance.
+8. Cross-Validation: Perform k-fold cross-validation to assess the model's robustness by splitting the data into multiple subsets and training/testing the model on different combinations of these subsets.
+9. Final Evaluation: Once satisfied with the model's performance on the testing dataset, evaluate its performance on unseen data or deploy it in a real-world setting.
+
+
+
+
+
+
+#%% md
+Exercise 4 : Designing Machine Learning Solutions For Specific Problems
+--
+#%% md
+1. Predicting Stock Prices:
+- Type of Machine Learning: Time Series Forecasting (Supervised Learning)
+- Explanation: Time series forecasting is the most suitable for predicting stock prices as it deals with sequential data points ordered by time. In this scenario, historical stock price data can be used as input features, and the target variable would be the future stock prices. Supervised learning algorithms, such as linear regression, ARIMA (AutoRegressive Integrated Moving Average), or more advanced methods like recurrent neural networks (RNNs) or long short-term memory networks (LSTMs), can be used to predict future stock prices based on historical patterns and trends.
+
+2. Organizing a Library of Books:
+- Type of Machine Learning: Unsupervised Learning (Clustering)
+- Explanation: Unsupervised learning, particularly clustering algorithms, is suitable for organizing a library of books into genres or categories based on similarities. Clustering algorithms, such as K-means or hierarchical clustering, can group books together based on features such as title keywords, author, subject matter, or reader reviews. By analyzing patterns and similarities in the data, unsupervised learning can automatically categorize books into meaningful clusters without the need for labeled training data.
+
+3. Program a Robot to Navigate and Find the Shortest Path in a Maze:
+- Type of Machine Learning: Reinforcement Learning
+- Explanation: Reinforcement learning is well-suited for training a robot to navigate and find the shortest path in a maze. In this scenario, the robot can learn through trial and error by receiving feedback (rewards or penalties) based on its actions. The environment (maze) is represented as states, and the robot takes actions (moves) to transition between states. Through exploration and exploitation, the robot learns the optimal policy (sequence of actions) to maximize cumulative rewards, ultimately finding the shortest path to navigate through the maze. Reinforcement learning algorithms, such as Q-learning or deep Q-networks (DQN), can be used for training the robot in this dynamic and uncertain environment.
+#%% md
+Exercise 5 : Designing An Evaluation Strategy For Different ML Models
+--
+#%% md
+### Supervised Learning Model: Random Forest Classifier
+
+**Evaluation Strategy:**
+1. **Train-Test Split:** Divide the dataset into training and testing sets.
+2. **Training:** Train the Random Forest Classifier on the training data.
+3. **Prediction:** Make predictions on the testing data.
+4. **Evaluation Metrics:**
+   - **Accuracy:** Overall correctness of the model's predictions.
+   - **Precision:** Proportion of true positive predictions out of all positive predictions.
+   - **Recall:** Proportion of true positive predictions out of all actual positives.
+   - **F1-score:** Harmonic mean of precision and recall, providing a balance between the two metrics.
+5. **Cross-Validation:** Perform k-fold cross-validation to assess the model's robustness.
+6. **ROC Curve and AUC:** Plot the ROC curve to visualize the trade-off between sensitivity and specificity.
+
+**Challenges and Limitations:**
+- Limited Interpretability
+- Overfitting
+- Computationally Expensive
+
+### Unsupervised Learning Model: K-means Clustering
+
+**Assessment of Effectiveness:**
+1. **Determining Optimal Clusters:**
+   - **Elbow Method:** Plot the within-cluster sum of squares (WCSS) against the number of clusters. Identify the "elbow point," where the rate of decrease in WCSS slows down.
+   - **Silhouette Score:** Compute the silhouette score for different numbers of clusters. A higher silhouette score indicates better-defined clusters.
+2. **Visual Inspection:** Visualize the clustering results to assess the separation and cohesion of clusters.
+3. **Cluster Validation Metrics:** Utilize external validation metrics such as Adjusted Rand Index or Normalized Mutual Information to measure the agreement between the clustering results and ground truth labels (if available).
+
+**Challenges and Limitations:**
+- Sensitivity to Initialization
+- Dependency on Distance Metric
+- Difficulty in Interpreting Results
+
+### Reinforcement Learning Model: Q-learning Algorithm
+
+**Measurement of Success:**
+1. **Cumulative Reward:** Measure the cumulative reward obtained by the agent over multiple episodes of interaction with the environment.
+2. **Convergence:** Monitor the convergence of the Q-values towards the optimal Q-values.
+3. **Exploration vs. Exploitation Balance:** Assess the balance between exploration (trying new actions) and exploitation (using the learned policy) to ensure effective learning without getting stuck in suboptimal policies.
+
+**Challenges and Limitations:**
+- Exploration-Exploitation Trade-off
+- Sparse Rewards
+- Sample Efficiency
+
+#%%
